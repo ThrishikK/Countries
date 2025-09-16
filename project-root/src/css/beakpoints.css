@@ -1,0 +1,65 @@
+/* FROM 250PX TO 600PX */
+
+@media (min-width: 15.625em) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  button {
+    font-family: inherit;
+    font-size: 1rem;
+  }
+}
+
+/* FROM 600PX TO 900PX */
+@media (min-width: 37.5em) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  button {
+    font-size: 1.2rem;
+  }
+}
+
+/* FROM 900PX TO 1200PX */
+@media (min-width: 56.25em) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+  button {
+    font-size: 1.4rem;
+  }
+}
+
+/* FROM 1200PX TO 1400PX */
+@media (min-width: 75em) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+  button {
+    font-size: 1.6rem;
+  }
+}

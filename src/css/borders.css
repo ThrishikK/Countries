@@ -1,0 +1,33 @@
+#bordersContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 40rem);
+  gap: 0.5rem;
+  justify-content: center;
+  align-content: center;
+  /*  */
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 51em) {
+  #bordersContainer {
+    grid-template-columns: repeat(1, 40rem);
+  }
+}
+
+@media (min-width: 51em) {
+  #bordersContainer {
+    grid-template-columns: repeat(2, 40rem);
+  }
+}
+
+@media (min-width: 76em) {
+  #bordersContainer {
+    grid-template-columns: repeat(3, 40rem);
+  }
+}
+
+.border-country-container {
+  background-color: brown;
+  height: 25rem;
+  cursor: pointer;
+}

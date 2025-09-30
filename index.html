@@ -3,12 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
+    <title>Countries</title>
     <link rel="stylesheet" href="src/css/main.css" />
     <link rel="stylesheet" href="src/css/beakpoints.css" />
+    <link rel="stylesheet" href="src/css/section-styles.css" />
+    <link rel="stylesheet" href="src/css/main-and-map.css" />
+    <link rel="stylesheet" href="src/css/borders.css" />
+    <link rel="stylesheet" href="src/css/loaders.css" />
   </head>
   <body>
-    <h1>Started Countries Project</h1>
+    <main>
+      <!-- TITLE SECTION -->
+      <section>
+        <h1>Countries</h1>
+      </section>
+      <!-- MAP AND MAIN COUNTRY -->
+      <section class="section-styles" id="mainAndMapSectionContainer">
+        <div id="mainAndMapContainer">
+          <div id="mainCountryContainer">
+            <div class="loader-container">
+              <div class="loader"></div>
+            </div>
+          </div>
+          <div id="mapContainer">
+            <div class="loader-container">
+              <div class="dots"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- BORDER-COUNTRIES -->
+      <section class="section-styles" id="bordersSectionContainer">
+        <h2>Borders</h2>
+        <div id="bordersContainer">
+          <div class="border-country-container"></div>
+          <div class="border-country-container">
+            <div class="loader-container">
+              <div class="dots"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="border-country-container"></div>
+          <div class="border-country-container">
+            <div class="loader-container">
+              <div class="loader"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <script type="module" src="src/js/main.js"></script>
   </body>
 </html>

@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #5768ac;
+
+  --primary-color-tint: #e3e6f1;
+  --primary-color-tint-half: #abb4d6;
+
+  --primary-color-shade: #0e111d;
+  --primary-color-shade-half: ##2c3456;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,4 +21,11 @@ html {
 
 body {
   width: 100%;
+  background-color: var(--primary-color-tint);
+  color: var(--primary-color-shade);
+}
+
+main {
+  max-width: 130rem;
+  margin: 1rem auto;
 }

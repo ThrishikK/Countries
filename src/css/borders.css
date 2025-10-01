@@ -27,7 +27,8 @@
 }
 
 .border-country-container {
-  background-color: brown;
-  height: 25rem;
+  background-color: var(--primary-color-shade-half);
+  color: var(--primary-color-tint-half);
+  height: 55rem;
   cursor: pointer;
 }

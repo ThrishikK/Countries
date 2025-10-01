@@ -1,0 +1,41 @@
+.country-details-container {
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color-shade);
+  color: var(--primary-color-tint);
+  font-size: 1.6rem !important;
+  /*  */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.flag-container {
+  padding: 1rem;
+  /*  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.country-details {
+  width: 100%;
+  padding: 1rem;
+  /*  */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.key-value-pair {
+  /*  */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.key {
+  font-weight: 600;
+}
+
+/* BORDERS */

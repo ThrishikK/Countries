@@ -9,13 +9,13 @@ import waveFlagCanvas from "../services/canvasFlag.js";
 
 const mainCountryContainer = document.getElementById("mainCountryContainer");
 
-export async function mainCountryFun(countryName) {
+export async function mainCountryFun(countryName, countryBoolen) {
   // CLEARING HTML
   mainCountryContainer.innerHTML = "";
   // ADDING LOADER
   const loaderHtml = loaderOneTemplateFun();
   mainCountryContainer.innerHTML = loaderHtml;
-  loadCountry(countryName, true)
+  loadCountry(countryName, countryBoolen)
     .then(function (data) {
       // console.log(data);
       // TAKING 0-INDEX BECAUSE API SENDS AN ARRAY

@@ -20,7 +20,9 @@ const borderCountryTemplateFunction = function (data, code) {
             >
               <!--  -->
               <div class="border-flag-container">
-               <canvas id="borderFlagCanvas${code}" width="350" height="250">
+               <canvas class="borderCountryCanvas" 
+               data-border-canvas-country-code="${code}"
+               id="borderFlagCanvas${code}" width="350" height="250">
                  </canvas>
               </div>
               <!-- DETAILS-CONTAINER -->

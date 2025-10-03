@@ -1,9 +1,10 @@
 import loadCountry from "../services/getCountryDetails.js";
 import borderCountryTemplateFunction from "../templates/borderCountryTemplate.js";
+import waveFlagCanvas from "../services/canvasFlag.js";
 
-const populatingHtml = function (container, data) {
+const populatingHtml = function (container, data, code) {
   container.innerHTML = "";
-  const resultHtml = borderCountryTemplateFunction(data);
+  const resultHtml = borderCountryTemplateFunction(data, code);
   container.innerHTML = resultHtml;
 };
 
@@ -19,7 +20,10 @@ export async function borderCountryFun(borderCodes) {
           `borderCountryContainer-${index}`
         );
         // ADDING HTML
-        populatingHtml(alreadyAddedBorderLoader, countryData);
+        populatingHtml(alreadyAddedBorderLoader, countryData, eachCode);
+        // CALLING WAVE FLAG FUNCTION
+        const borderCountryAddress = countryData.flags.png;
+        waveFlagCanvas(`borderFlagCanvas${eachCode}`, borderCountryAddress);
       })
       .catch(function (error) {
         console.log("Error:", error.message);

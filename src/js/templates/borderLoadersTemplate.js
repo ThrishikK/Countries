@@ -1,5 +1,5 @@
 const bordersContainer = document.getElementById("bordersContainer");
-console.log(bordersContainer);
+// console.log(bordersContainer);
 
 const borderLoaderHtml = function (index, code) {
   return ` <div class="border-country-container" id="borderCountryContainer-${index}" data-border-code = "${code}">
@@ -10,8 +10,8 @@ const borderLoaderHtml = function (index, code) {
 };
 
 const borderLoaderTemplateFun = function (count, borderCodes) {
-  console.log(count);
-  console.log(bordersContainer);
+  // console.log(count);
+  // console.log(bordersContainer);
   // CLEARING BORDERS INNER HTML
   bordersContainer.innerHTML = "";
   for (let index = 0; index < count; index++) {

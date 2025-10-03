@@ -3,12 +3,13 @@ import mainCountryTemplateFunction from "../templates/mainCountryTemplate.js";
 import loaderOneTemplateFun from "../templates/loaderOneTemplate.js";
 import borderLoaderTemplateFun from "../templates/borderLoadersTemplate.js";
 import { borderCountryFun } from "./borderCountry.js";
+import waveFlagCanvas from "../services/canvasFlag.js";
 
-let countryName = "India";
+// let countryName = "India";
 
 const mainCountryContainer = document.getElementById("mainCountryContainer");
 
-export async function mainCountryFun() {
+export async function mainCountryFun(countryName) {
   // CLEARING HTML
   mainCountryContainer.innerHTML = "";
   // ADDING LOADER
@@ -16,22 +17,25 @@ export async function mainCountryFun() {
   mainCountryContainer.innerHTML = loaderHtml;
   loadCountry(countryName, true)
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
       // TAKING 0-INDEX BECAUSE API SENDS AN ARRAY
       const countryData = data[0];
-      console.log(countryData);
+      const mainCountryAddress = countryData.flags.png;
       // FILLING MAIN COUNTRY TEMPLATE
       const resultHtml = mainCountryTemplateFunction(countryData);
       // GETTING BORDERS COUNT AND BORDER CODES
       const borderCodes = countryData.borders;
       const bordersCount = borderCodes.length;
-      console.log(bordersCount);
+      // console.log(bordersCount);
       borderLoaderTemplateFun(bordersCount, borderCodes);
       // ADDED BORDERS LOADERS ABOVE NOW ADDING BORDER COUNTRY DETAILS
       borderCountryFun(borderCodes);
       // REMOVING LOADER AND ADDING COUNTRY DATA
       mainCountryContainer.innerHTML = "";
       mainCountryContainer.innerHTML = resultHtml;
+      // console.log(resultHtml);
+      // WAVING FLAG
+      waveFlagCanvas("mainFlagCanvas", mainCountryAddress);
     })
     .catch(function (error) {
       console.log("Error:", error.message);

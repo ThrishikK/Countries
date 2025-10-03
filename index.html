@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="src/css/borders.css" />
     <link rel="stylesheet" href="src/css/loaders.css" />
+    <link rel="stylesheet" href="src/css/canvas.css" />
   </head>
   <body>
     <main>
@@ -27,44 +28,45 @@
             <div class="country-details-container">
               <!--  -->
               <div class="flag-container">
-                <img src="https://flagcdn.com/w320/in.png" alt="flag" />
+                <!-- <img src="https://flagcdn.com/w320/in.png" alt="flag" /> -->
+                <canvas id="flagCanvas" width="350" height="250"></canvas>
               </div>
               <!-- DETAILS-CONTAINER -->
               <div class="country-details">
                 <div class="key-value-pair">
                   <p class="key">Name</p>
-                  <p>:</p>
-                  <p>India</p>
+                  <p class="colon">:</p>
+                  <p class="value">India</p>
                 </div>
                 <div class="key-value-pair">
                   <p class="key">Capital</p>
-                  <p>:</p>
-                  <p>New Delhi</p>
+                  <p class="colon">:</p>
+                  <p class="value">New Delhi</p>
                 </div>
                 <div class="key-value-pair">
                   <p class="key">Borders</p>
-                  <p>:</p>
-                  <p>6</p>
+                  <p class="colon">:</p>
+                  <p class="value">6</p>
                 </div>
                 <div class="key-value-pair">
                   <p class="key">Population</p>
-                  <p>:</p>
-                  <p>11234567</p>
+                  <p class="colon">:</p>
+                  <p class="value">11234567</p>
                 </div>
                 <div class="key-value-pair">
                   <p class="key">Currency</p>
-                  <p>:</p>
-                  <p>Rupee</p>
+                  <p class="colon">:</p>
+                  <p class="value">Rupee</p>
                 </div>
                 <div class="key-value-pair">
                   <p class="key">Languages</p>
-                  <p>:</p>
-                  <p>English,Hindi,Tamil</p>
+                  <p class="colon">:</p>
+                  <p class="value">English,Hindi,Tamil</p>
                 </div>
                 <div class="key-value-pair">
                   <p class="key">Continent</p>
-                  <p>:</p>
-                  <p>Asia</p>
+                  <p class="colon">:</p>
+                  <p class="value">Asia</p>
                 </div>
               </div>
             </div>
@@ -86,7 +88,9 @@
             >
               <!--  -->
               <div class="border-flag-container">
-                <img src="https://flagcdn.com/w320/cn.png" alt="flag" />
+                <!-- <img src="https://flagcdn.com/w320/cn.png" alt="flag" />
+                  -->
+                <canvas id="flagCanvas" width="350" height="250"></canvas>
               </div>
               <!-- DETAILS-CONTAINER -->
               <div class="country-details border-country-details">

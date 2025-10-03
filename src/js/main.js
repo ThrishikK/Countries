@@ -1,3 +1,5 @@
 import { mainCountryFun } from "./components/mainCountry.js";
 
-mainCountryFun();
+let countryName = "Russia";
+
+mainCountryFun(countryName);

@@ -11,32 +11,34 @@ const getLanguages = function (languagesObj) {
   return Object.values(languagesObj).join(",");
 };
 
-const borderCountryTemplateFunction = function (data) {
+const borderCountryTemplateFunction = function (data, code) {
   // console.log(Object.keys(data.currencies)[0]);
+  console.log(code);
   return `
             <div
               class="country-details-container border-country-details-container"
             >
               <!--  -->
               <div class="border-flag-container">
-                <img src="${data.flags.png}" alt="${data.flags.alt}" />
+               <canvas id="borderFlagCanvas${code}" width="350" height="250">
+                 </canvas>
               </div>
               <!-- DETAILS-CONTAINER -->
               <div class="country-details border-country-details">
                 <div class="key-value-pair">
                   <p class="key">Name</p>
-                  <p>:</p>
-                  <p>${data.name.common}</p>
+                  <p class="colon">:</p>
+                  <p class="value">${data.name.common}</p>
                 </div>
                 <div class="key-value-pair">
                   <p class="key">Capital</p>
-                  <p>:</p>
-                  <p>${data.capital[0]}</p>
+                  <p class="colon">:</p>
+                  <p class="value">${data.capital[0]}</p>
                 </div>
                 <div class="key-value-pair">
                   <p class="key">Continent</p>
-                  <p>:</p>
-                  <p>${data.continents[0]}</p>
+                  <p class="colon">:</p>
+                  <p class="value">${data.continents[0]}</p>
                 </div>
               </div>
             </div>

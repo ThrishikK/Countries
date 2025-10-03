@@ -4,19 +4,23 @@
   gap: 1rem;
 }
 
-@media (max-width: 48em) {
-  #mainAndMapContainer {
-    flex-direction: column;
-  }
-}
-
 #mainCountryContainer {
   width: 100%;
   height: 35rem;
-  background-color: aqua;
+  background-color: var(--primary-color-shade);
 }
 #mapContainer {
   width: 100%;
   height: 35rem;
-  background-color: tomato;
+  background-color: var(--primary-color-shade);
+}
+
+@media (max-width: 48em) {
+  #mainAndMapContainer {
+    flex-direction: column;
+  }
+
+  #mainCountryContainer {
+    height: 50rem;
+  }
 }

@@ -10,6 +10,12 @@
   justify-content: space-around;
 }
 
+@media (max-width: 48em) {
+  .country-details-container {
+    flex-direction: column;
+  }
+}
+
 .flag-container {
   padding: 1rem;
   /*  */

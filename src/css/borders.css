@@ -30,5 +30,5 @@
   background-color: var(--primary-color-shade-half);
   color: var(--primary-color-tint-half);
   height: 55rem;
-  cursor: pointer;
+  /* cursor: pointer; */
 }

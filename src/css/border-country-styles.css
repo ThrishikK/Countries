@@ -3,6 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /*  */
+  border-radius: 0.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem var(--primary-color-shade-half),
+    inset -0.5rem -0.5rem 1rem var(--primary-color-shade-half);
 }
 
 .border-flag-container {

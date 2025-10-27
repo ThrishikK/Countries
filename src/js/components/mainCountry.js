@@ -17,7 +17,7 @@ export async function mainCountryFun(countryName, countryBoolen) {
   mainCountryContainer.innerHTML = loaderHtml;
   loadCountry(countryName, countryBoolen)
     .then(function (data) {
-      // console.log(data);
+      console.log(data);
       // TAKING 0-INDEX BECAUSE API SENDS AN ARRAY
       const countryData = data[0];
       const mainCountryAddress = countryData.flags.png;

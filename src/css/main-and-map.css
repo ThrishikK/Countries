@@ -15,7 +15,7 @@
   background-color: var(--primary-color-shade);
 }
 
-@media (max-width: 48em) {
+@media (max-width: 58.125em) {
   #mainAndMapContainer {
     flex-direction: column;
   }

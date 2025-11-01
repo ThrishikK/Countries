@@ -9,6 +9,7 @@ import { highlightCountry } from "../services/loadLeafLet.js";
 // let countryName = "India";
 
 const mainCountryContainer = document.getElementById("mainCountryContainer");
+const bordersContainer = document.getElementById("bordersContainer");
 
 export async function mainCountryFun(countryName, countryBoolen) {
   // CLEARING HTML
@@ -18,9 +19,9 @@ export async function mainCountryFun(countryName, countryBoolen) {
   mainCountryContainer.innerHTML = loaderHtml;
   loadCountry(countryName, countryBoolen)
     .then(function (data) {
-      // console.log(data);
+      console.log(data);
       // TAKING 0-INDEX BECAUSE API SENDS AN ARRAY
-      const countryData = data[0];
+      const countryData = countryName === "India" ? data[1] : data[0];
       // console.log(countryData);
       if (countryBoolen === false) {
         // console.log("Border Clicked");
@@ -39,12 +40,17 @@ export async function mainCountryFun(countryName, countryBoolen) {
       const resultHtml = mainCountryTemplateFunction(countryData);
       // GETTING BORDERS COUNT AND BORDER CODES
       const borderCodes = countryData.borders;
-      // console.log(borderCodes);
-      const bordersCount = borderCodes.length;
-      // console.log(bordersCount);
-      borderLoaderTemplateFun(bordersCount, borderCodes);
-      // ADDED BORDERS LOADERS ABOVE NOW ADDING BORDER COUNTRY DETAILS
-      borderCountryFun(borderCodes);
+      console.log(borderCodes);
+      if (borderCodes !== undefined && borderCodes.length > 0) {
+        const bordersCount = borderCodes.length;
+        // console.log(bordersCount);
+        borderLoaderTemplateFun(bordersCount, borderCodes);
+        // ADDED BORDERS LOADERS ABOVE NOW ADDING BORDER COUNTRY DETAILS
+        borderCountryFun(borderCodes);
+      } else {
+        // CLEARING BORDERS CONTAINER IF NO BORDERS
+        bordersContainer.innerHTML = "";
+      }
       // REMOVING LOADER AND ADDING COUNTRY DATA
       mainCountryContainer.innerHTML = "";
       mainCountryContainer.innerHTML = resultHtml;

@@ -1,5 +1,5 @@
 const getCurrency = function (currencyObj) {
-  // console.log(currencyObj);
+  console.log(currencyObj);
   let currencyName = Object.keys(currencyObj)[0];
   // console.log(currencyName);
   // console.log(currencyObj[currencyName].name);
@@ -13,6 +13,8 @@ const getLanguages = function (languagesObj) {
 
 const mainCountryTemplateFunction = function (data) {
   console.log(data);
+  let bordersCount =
+    data.borders?.length === undefined ? 0 : data.borders.length;
   // console.log(Object.keys(data.currencies)[0]);
   return ` <div class="country-details-container">
               <!--  -->
@@ -35,7 +37,7 @@ const mainCountryTemplateFunction = function (data) {
                 <div class="key-value-pair">
                   <p class="key">Borders</p>
                   <p  class="colon">:</p>
-                  <p class="value">${data.borders.length}</p>
+                  <p class="value">${bordersCount}</p>
                 </div>
                 <div class="key-value-pair">
                   <p class="key">Population</p>

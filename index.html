@@ -4,16 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Countries</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
     <link rel="stylesheet" href="src/css/main.css" />
     <link rel="stylesheet" href="src/css/beakpoints.css" />
     <link rel="stylesheet" href="src/css/section-styles.css" />
     <link rel="stylesheet" href="src/css/main-and-map.css" />
     <link rel="stylesheet" href="src/css/main-country-styles.css" />
+
     <link rel="stylesheet" href="src/css/border-country-styles.css" />
 
     <link rel="stylesheet" href="src/css/borders.css" />
     <link rel="stylesheet" href="src/css/loaders.css" />
     <link rel="stylesheet" href="src/css/canvas.css" />
+    <link rel="stylesheet" href="src/css/leaflet-custom.css" />
   </head>
   <body>
     <main>
@@ -72,8 +76,10 @@
             </div>
           </div>
           <div id="mapContainer">
-            <div class="loader-container">
-              <div class="dots"><span></span><span></span><span></span></div>
+            <div id="map">
+              <div class="loader-container">
+                <div class="dots"><span></span><span></span><span></span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -126,6 +132,8 @@
         </div>
       </section>
     </main>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
     <script type="module" src="src/js/main.js"></script>
   </body>
 </html>

@@ -13,7 +13,7 @@ const getLanguages = function (languagesObj) {
 
 const borderCountryTemplateFunction = function (data, code) {
   // console.log(Object.keys(data.currencies)[0]);
-  console.log(code);
+  // console.log(code);
   return `
             <div
               class="country-details-container border-country-details-container"

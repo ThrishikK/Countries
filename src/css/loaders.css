@@ -34,7 +34,7 @@
 .dots span {
   width: 1.2rem;
   height: 1.2rem;
-  background: var(--primary-color-shade);
+  background: var(--primary-color-tint);
   border-radius: 50%;
   animation: pulse 0.6s infinite alternate;
 }

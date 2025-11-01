@@ -14,7 +14,7 @@ export async function borderCountryFun(borderCodes) {
       .then(function (data) {
         // TAKING 0-INDEX BECAUSE API SENDS AN ARRAY
         const countryData = data[0];
-        console.log(countryData);
+        // console.log(countryData);
         // GETTING ALREADY ADDED LOADER ELEMENT
         const alreadyAddedBorderLoader = document.getElementById(
           `borderCountryContainer-${index}`

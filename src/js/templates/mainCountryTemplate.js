@@ -12,6 +12,7 @@ const getLanguages = function (languagesObj) {
 };
 
 const mainCountryTemplateFunction = function (data) {
+  console.log(data);
   // console.log(Object.keys(data.currencies)[0]);
   return ` <div class="country-details-container">
               <!--  -->

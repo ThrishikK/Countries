@@ -4,6 +4,7 @@ import loaderOneTemplateFun from "../templates/loaderOneTemplate.js";
 import borderLoaderTemplateFun from "../templates/borderLoadersTemplate.js";
 import { borderCountryFun } from "./borderCountry.js";
 import waveFlagCanvas from "../services/canvasFlag.js";
+import { highlightCountry } from "../services/loadLeafLet.js";
 
 // let countryName = "India";
 
@@ -17,14 +18,28 @@ export async function mainCountryFun(countryName, countryBoolen) {
   mainCountryContainer.innerHTML = loaderHtml;
   loadCountry(countryName, countryBoolen)
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
       // TAKING 0-INDEX BECAUSE API SENDS AN ARRAY
       const countryData = data[0];
+      // console.log(countryData);
+      if (countryBoolen === false) {
+        // console.log("Border Clicked");
+        // console.log(countryData);
+        const leafLetCountryName = countryData.name.common;
+        // console.log(leafLetCountryName);
+        const [leafLetLat, leafLetLng] = countryData.latlng;
+        // console.log(leafLetLat, leafLetLng);
+
+        highlightCountry(leafLetCountryName, leafLetLat, leafLetLng);
+      }
+
       const mainCountryAddress = countryData.flags.png;
+      // console.log(mainCountryAddress);
       // FILLING MAIN COUNTRY TEMPLATE
       const resultHtml = mainCountryTemplateFunction(countryData);
       // GETTING BORDERS COUNT AND BORDER CODES
       const borderCodes = countryData.borders;
+      // console.log(borderCodes);
       const bordersCount = borderCodes.length;
       // console.log(bordersCount);
       borderLoaderTemplateFun(bordersCount, borderCodes);

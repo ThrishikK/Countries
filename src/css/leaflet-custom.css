@@ -1,0 +1,12 @@
+.ocean {
+  background-color: #016ca5;
+  color: whitesmoke;
+  padding: 1.2px 4px;
+  border-radius: 4px;
+}
+.country-name-label {
+  font-weight: 900;
+  color: #016ca5;
+  font-style: italic;
+  letter-spacing: 0.4px;
+}

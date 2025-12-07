@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Countries</title>
+    <title>Borders</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
     <link rel="stylesheet" href="src/css/main.css" />
@@ -18,12 +18,13 @@
     <link rel="stylesheet" href="src/css/loaders.css" />
     <link rel="stylesheet" href="src/css/canvas.css" />
     <link rel="stylesheet" href="src/css/leaflet-custom.css" />
+    <link rel="stylesheet" href="src/css/island.css" />
   </head>
   <body>
     <main>
       <!-- TITLE SECTION -->
       <section>
-        <h1>Countries</h1>
+        <h1 id="mainCountryHeadingElement">Russia</h1>
       </section>
       <!-- MAP AND MAIN COUNTRY -->
       <section class="section-styles" id="mainAndMapSectionContainer">
@@ -86,7 +87,7 @@
       </section>
       <!-- BORDER-COUNTRIES -->
       <section class="section-styles" id="bordersSectionContainer">
-        <h2>Borders</h2>
+        <h2 id="bordersContainerHeadingElement">Borders</h2>
         <div id="bordersContainer">
           <div class="border-country-container">
             <div

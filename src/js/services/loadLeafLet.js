@@ -30,6 +30,10 @@ async function highlightCountry(countryName, lat, lng) {
     const response = await fetch(geoDataUrl);
     const geoData = await response.json();
     console.log(geoData);
+    // SOME COUNTRIES NAME MISMATCH
+    if (countryName === "United States") {
+      countryName = "United States of America";
+    }
     // Find matching country
     const countryFeature = geoData.features.find(
       (f) => f.properties.name.toLowerCase() === countryName.toLowerCase()
@@ -70,10 +74,36 @@ async function highlightCountry(countryName, lat, lng) {
 function loadingMap() {
   map = L.map("map").setView([63.07, 90.53], 13);
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "© OpenStreetMap contributors",
-  }).addTo(map);
+  // L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  //   attribution: "© OpenStreetMap contributors",
+  // }).addTo(map);
+  // TRYING SATELLITE VIEW START
+  // Base Layers
+  const osm = L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+      maxZoom: 18,
+      attribution: "&copy; OpenStreetMap contributors",
+    }
+  );
 
+  const satellite = L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution: "Tiles © Esri",
+    }
+  );
+
+  // Add default layer (satellite)
+  satellite.addTo(map);
+
+  // Add layer control
+  L.control
+    .layers({ "🗺️ OSM Map": osm, "🛰️ Satellite": satellite }, null, {
+      collapsed: false,
+    })
+    .addTo(map);
+  // END TRYING SATELLITE VIEW
   // Map click event
   map.on("click", async function (e) {
     const { lat, lng } = e.latlng;
